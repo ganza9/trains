@@ -37,15 +37,4 @@ describe(Train)do
       expect(Train.find(test_train2.id())).to(eq(test_train2))
     end
   end
-
-
-
-
-
-
-
-
-
-
-
 end
