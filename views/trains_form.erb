@@ -1,8 +1,11 @@
 <h1>Add a train</h1>
 
-<form action="/trains" method="post">
+<form action="/trains_form" method="post">
   <label for="name">Assign a name to your train:</label>
   <input type="text" name="name" id="name">
-
-  <button type="submit" name="button">Add train</button>
+  <label for="number">Assign a number to your train:</label>
+  <input type="text" name="number" id="number">
+  <label for="capacity">Assign a capacity to your train:</label>
+  <input type="text" name="capacity" id="capacity">
+  <button type="submit" class="btn">Add train:</button>
 </form>

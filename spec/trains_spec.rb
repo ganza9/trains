@@ -1,5 +1,6 @@
 require("spec_helper")
 require('train')
+require('pry')
 
 describe(Train)do
   describe(".all")do
@@ -37,4 +38,23 @@ describe(Train)do
       expect(Train.find(test_train2.id())).to(eq(test_train2))
     end
   end
+  describe("#save") do
+   it("lets you save trains to the database") do
+     train = Train.new({name: "E Line", number: 1, capacity: 300, id: nil})
+     train.save()
+     expect([train]).to(eq(Train.all()))
+   end
+ end
+
+describe("#delete") do
+  it("lets you delete a train from the database") do
+    train = Train.new({:name => "D line", :number => 1, :capacity => 200, :id => nil})
+    train.save()
+    train2 = Train.new({:name => "E line", :number => 2, :capacity => 300, :id => nil})
+    train2.save
+    train.delete()
+    expect(Train.all()).to(eq([train2]))
+    end
+  end
+
 end
